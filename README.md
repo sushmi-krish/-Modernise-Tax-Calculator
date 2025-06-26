@@ -20,15 +20,15 @@ This project modernizes the Tax Calculator web application by containerizing it 
 
 #SetUP & Usage
 1. Clone the repository
-   
+   ```bash
      git clone https://github.com/sushmi-krish/-Modernise-Tax-Calculator.git
      cd -Modernise-Tax-Calculator
-
+```
 2. Build and run Docker image locally
 
   ```bash   docker build -t tax-calculator .
          docker run -p 8080:80 tax-calculator
-
+```
 Access the app at http://localhost:8080.
 
 4. Create Kubernetes secret for IBM Cloud Container Registry
@@ -38,16 +38,16 @@ Access the app at http://localhost:8080.
   --docker-username=iamapikey \
   --docker-password=<IBM_CLOUD_API_KEY> \
   --docker-email=<your-email>
-  
+  ```
 4. Deploy Tekton pipeline and start PipelineRun
 ```bash kubectl apply -f pipeline/tasks/npm.yaml
 kubectl apply -f pipeline/pipelines/tc-pipeline.yaml
 kubectl apply -f pipeline/pipelineruns/tc-pipeline-run.yaml
-
+```
 5. Monitor pipeline execution
 ```bash
 tkn pipelinerun logs -f
-
+```
 # Pipeline Stages
 
  * init: Cleans workspace
@@ -61,8 +61,6 @@ tkn pipelinerun logs -f
 * Verify PVC is bound for workspace storage
 * Check pipeline logs for test failures or build errors
 
-# Author
-Sushmi-Krish
 
 
 
