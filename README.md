@@ -4,7 +4,7 @@ This project modernizes the Tax Calculator web application by containerizing it 
 
 # Key Features
 
-* Containerized application using Docker with Nginx web server
+* Containerized application using Docker
 * Automated build, test, and deploy pipeline using Tekton
 * Unit tests run automatically with Jasmine
 * Deployment to IBM Cloud Container Registry and IBM Cloud Code Engine
